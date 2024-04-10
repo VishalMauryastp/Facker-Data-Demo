@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { data } from "./data"; // Assuming you have imported your data array
 import { BsSearch } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 function Search3() {
   const [searchText, setSearchText] = useState("");
   const [location, setLocation] = useState("");
   const [Data, setData] = useState([]);
+  const navigate = useNavigate();
 
   const handleSearch = () => {
     const filtered = data.filter((shop) => {
@@ -67,7 +69,10 @@ function Search3() {
           {Data.map((shop) => (
             <div
               key={shop.id}
-              className="shop-card  flex  max-lg:flex-col mt-8 lg:gap-8  text-white  bg-blue-900 rounded-2xl overflow-hidden shadow-2xl"
+              className="shop-card  cursor-pointer flex  max-lg:flex-col mt-8 lg:gap-8  text-white  bg-blue-900 rounded-2xl overflow-hidden shadow-2xl"
+              onClick={() => {
+                navigate(`/details/${shop.id}`);
+              }}
             >
               <div className="max-h-[500px] lg:w-[50%]">
                 <img

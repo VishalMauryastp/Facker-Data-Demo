@@ -25,6 +25,7 @@ function Search() {
     email: faker.internet.email(),
     website: faker.internet.url(),
     img: faker.image.business(640, 380, true),
+    img2: faker.image.business(1200, 380, true),
     banner: faker.image.business(1200, 380, true),
     discription: faker.commerce.productDescription(),
   }));

@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import ComingSoon from "./pages/ComingSoon";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import Details from "./pages/Details";
 
 function App() {
   const ScrollToTop = () => {
@@ -31,6 +32,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/details/:id" element={<Details />} />
         <Route path="*" element={<ComingSoon />} />
       </Routes>
     </BrowserRouter>
